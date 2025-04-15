@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="icon" type="image/jpeg" href="bow.jpeg">
+    <title>ถึงคนที่เค้ารักที่สุดในโลก</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom, #a0c4ff, #90e0ef);
+            font-family: 'Sarabun', sans-serif;
+            text-align: center;
+        }
+
+        .envelope {
+            margin: 100px auto 30px;
+            width: 200px;
+            height: 150px;
+            background: #48cae4;
+            position: relative;
+            border-radius: 10px;
+            cursor: pointer;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+            transition: transform 0.4s;
+        }
+
+        .envelope:hover {
+            transform: scale(1.05);
+        }
+
+        .flap {
+            width: 0;
+            height: 0;
+            border-left: 100px solid transparent;
+            border-right: 100px solid transparent;
+            border-bottom: 75px solid #0096c7;
+            position: absolute;
+            top: -75px;
+            left: 0;
+            transition: transform 0.4s;
+            transform-origin: bottom center;
+        }
+
+        .message-box {
+            display: none;
+            margin: 30px auto;
+            max-width: 80%;
+            background: #caf0f8;
+            padding: 20px;
+            border-radius: 15px;
+            font-size: 1.3em;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            animation: fadeIn 1s ease forwards;
+        }
+
+        .love {
+            color: #0077b6;
+            font-size: 2em;
+            margin-top: 10px;
+        }
+
+        @keyframes fadeIn {
+            from {opacity: 0; transform: translateY(20px);}
+            to {opacity: 1; transform: translateY(0);}
+        }
+
+        .click-hint {
+            margin-top: 10px;
+            color: #555;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <img src="bow.jpeg" alt="Bow" style="width: 200px; margin-top: 20px; border-radius: 10px;">
+    </div>
+
+    <h1 style="margin-top: 50px;">จดหมายถึง ไออ้วนโบว์</h1>
+    <div class="click-hint">(กดตรงซองจดหมายสิที่รัก)</div>
+
+    <div class="envelope" onclick="openLetter()">
+        <div class="flap" id="flap"></div>
+    </div>
+
+    <div class="message-box" id="messageBox">
+        ถึงคนที่เค้ารักที่สุดในโลก<br/>
+        ไม่ว่าจะผ่านเรื่องร้ายดีแค่ไหน<br/>
+        เค้าก็อยากจับมือเธอไว้ตลอดไปนะ<br/>
+        ขอโทษสำหรับเรื่องที่เค้าอาจทำให้เธอเสียใจ<br/>
+        <div class="love">รักน้าาาาาา</div>
+    </div>
+
+    <script>
+        let isOpen = false;
+    
+        function openLetter() {
+            const flap = document.getElementById('flap');
+            const message = document.getElementById('messageBox');
+    
+            if (!isOpen) {
+                flap.style.transform = "rotateX(150deg)";
+                setTimeout(() => {
+                    message.style.display = "block";
+                }, 500);
+            } else {
+                flap.style.transform = "rotateX(0deg)";
+                message.style.display = "none";
+            }
+    
+            isOpen = !isOpen;
+        }
+    </script>
+
+</body>
+</html>
