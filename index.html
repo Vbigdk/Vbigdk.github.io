@@ -2,188 +2,50 @@
 <html lang="th">
 <head>
   <meta charset="UTF-8">
-  <title>แฟนผมชื่อโบว์คับ</title>
+  <title>แฟนผมชื่อโบว์คับ 💖</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
   <style>
     body {
-      background: linear-gradient(135deg, #c3dafe, #e9d8fd);
-      color: #4c4c6d;
       font-family: 'Segoe UI', sans-serif;
-    }
-
-    h1, h4 {
-      color: #5b21b6;
-      font-weight: bold;
-    }
-
-    .card {
-      background-color: rgba(255, 255, 255, 0.95);
-      border: none;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-      border-radius: 15px;
-      transition: transform 0.2s;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .card:hover {
-      transform: scale(1.03);
-    }
-
-    .gallery-img {
-      height: 520px;
-      object-fit: cover;
-      border-top-left-radius: 15px;
-      border-top-right-radius: 15px;
-      cursor: pointer;
-    }
-
-    .card-body {
-      flex-grow: 1;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-    }
-
-    .card-text {
-      color: #6b46c1;
-      font-size: 15px;
-      margin: 0;
-    }
-
-    .date-banner {
-      background-color: rgba(255, 255, 255, 0.8);
-      padding: 15px;
-      border-radius: 12px;
-      text-align: center;
-      margin-bottom: 30px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    }
-
-    /* Lightbox */
-    .lightbox {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background-color: rgba(0, 0, 0, 0.8);
-      display: none;
-      align-items: center;
-      justify-content: center;
-      z-index: 1000;
-      flex-direction: column;
-      padding: 20px;
-    }
-
-    .lightbox img {
-      max-width: 90%;
-      max-height: 80vh;
-      border-radius: 12px;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
-    }
-
-    .close-btn {
-      position: absolute;
-      top: 20px;
-      right: 25px;
-      background: #fff;
-      color: #5b21b6;
-      border: none;
-      font-size: 24px;
-      font-weight: bold;
-      border-radius: 50%;
-      width: 40px;
-      height: 40px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-      transition: background 0.3s;
-    }
-
-    .close-btn:hover {
-      background: #f0f0f0;
-      cursor: pointer;
     }
   </style>
 </head>
-<body>
+<body class="bg-gradient-to-br from-pink-100 via-pink-200 to-rose-100 text-rose-800">
 
-  <div class="container py-5">
-    <h1 class="text-center mb-3">แฟนผมชื่อโบว์คับ</h1>
-    <div class="date-banner">
-      <h4>รวมรูปน่ารักของแฟน</h4>
-      <p class="mb-0"></p>
+  <!-- ✅ HEADER -->
+  <header class="max-w-4xl mx-auto mt-8 px-4 text-center">
+    <h1 class="text-3xl md:text-4xl font-bold text-pink-700">💗 แฟนผมชื่อโบว์คับ 💗</h1>
+    <p class="text-pink-600 mt-2 text-lg">รวมโมเมนต์สุดน่ารักของคนที่ผมรักที่สุด</p>
+  </header>
+
+  <!-- ✅ SLIDESHOW -->
+  <section class="max-w-3xl mx-auto mt-10 px-4">
+    <div class="relative w-full h-[400px] overflow-hidden rounded-3xl shadow-xl border-4 border-pink-300">
+      <img id="slideshow" src="1.jpg" alt="สไลด์" class="w-full h-full object-cover transition-all duration-700 rounded-3xl">
     </div>
+    <p id="caption" class="text-center text-pink-700 font-semibold mt-4 text-lg">น่ารักเกิ๊น 💕</p>
+  </section>
 
-    <div class="row g-4">
-      <!-- ใช้ col-12 เพื่อให้เรียงทีละรูปในมือถือ -->
-      <div class="col-12 col-md-4">
-        <div class="card">
-          <img src="1.jpg" class="card-img-top gallery-img" alt="รูป 1" onclick="showImage('1.jpg')">
-          <div class="card-body">
-            <p class="card-text">น่ารักเกิ๊น</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-12 col-md-4">
-        <div class="card">
-          <img src="2.jpg" class="card-img-top gallery-img" alt="รูป 2" onclick="showImage('2.jpg')">
-          <div class="card-body">
-            <p class="card-text">แก้มเยอะมากอิๆ</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-12 col-md-4">
-        <div class="card">
-          <img src="3.jpg" class="card-img-top gallery-img" alt="รูป 3" onclick="showImage('3.jpg')">
-          <div class="card-body">
-            <p class="card-text">อันนี้ก็แก้มเยอะเหมือนกัน</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-12 col-md-4">
-        <div class="card">
-          <img src="4.jpg" class="card-img-top gallery-img" alt="รูป 4" onclick="showImage('4.jpg')">
-          <div class="card-body">
-            <p class="card-text">อันนี้สวยนะฮะ</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-12 col-md-4">
-        <div class="card">
-          <img src="5.jpg" class="card-img-top gallery-img" alt="รูป 5" onclick="showImage('5.jpg')">
-          <div class="card-body">
-            <p class="card-text">ยิ้มแย้มแจ่มใส</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-12 col-md-4">
-        <div class="card">
-          <img src="6.jpg" class="card-img-top gallery-img" alt="รูป 6" onclick="showImage('6.jpg')">
-          <div class="card-body">
-            <p class="card-text">วีดีโอคอล 555</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Lightbox แสดงรูปเต็ม -->
-  <div id="lightbox" class="lightbox" onclick="hideImage()">
-    <button class="close-btn" onclick="hideImage(event)">×</button>
-    <img id="lightbox-img" src="" alt="รูปใหญ่">
-  </div>
-
+  <!-- ✅ SCRIPT -->
   <script>
-    function showImage(src) {
-      document.getElementById('lightbox-img').src = src;
-      document.getElementById('lightbox').style.display = 'flex';
+    const images = [
+      { src: '1.jpg', caption: 'น่ารักเกิ๊น 💕' },
+      { src: '2.jpg', caption: 'แก้มเยอะมากอิๆ 😚' },
+      { src: '3.jpg', caption: 'อันนี้ก็แก้มเยอะเหมือนกัน 🥰' },
+      { src: '4.jpg', caption: 'อันนี้สวยนะฮะ 😍' },
+      { src: '5.jpg', caption: 'ยิ้มแย้มแจ่มใสเหมือนนางฟ้า 😇' },
+      { src: '6.jpg', caption: 'วีดีโอคอลที่คิดถึงสุดๆ 📱❤️' }
+    ];
+
+    let index = 0;
+    function changeSlide() {
+      index = (index + 1) % images.length;
+      document.getElementById('slideshow').src = images[index].src;
+      document.getElementById('caption').textContent = images[index].caption;
     }
 
-    function hideImage(e) {
-      if (e) e.stopPropagation(); // ป้องกันการปิดจากการคลิกภาพ
-      document.getElementById('lightbox').style.display = 'none';
-    }
+    setInterval(changeSlide, 3000);
   </script>
 
 </body>
